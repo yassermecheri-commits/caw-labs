@@ -1,0 +1,124 @@
+
+
+/*1*/ 
+* {
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+
+
+body {
+    background-color: #f4f4f4;
+}
+
+
+h1, h2 {
+    text-align: center;
+    color: #336699;
+}
+
+
+p {
+    margin-bottom: 1em;
+}
+
+
+
+/*2*/
+#special {
+    background-color: #fffacd;
+    padding: 10px;
+}
+
+
+.hello {
+    color: #28a745;
+    font-weight: bold;
+}
+
+
+
+/*3*/
+.main-content > h2,
+.ai-tools > h2 {
+    text-transform: uppercase;
+}
+
+
+.ai-tools li {
+    list-style-type: square;
+}
+
+
+.ai-tools ul {
+    padding-left: 20px;
+}
+
+
+
+/*4*/
+input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+
+/*5*/
+a {
+  color: #007bff;
+}
+
+
+a:hover {
+  text-decoration: none;
+  color: #0056b3; 
+}
+
+
+a:visited {
+  color: #6c757d;
+}
+
+
+input:focus {
+  border: 2px solid blue;
+  outline: none; 
+}    /* The :focus pseudo-class allows you to style an element when it is selected (focused). */
+
+
+div.ai-tools li.hello {
+  font-style: italic;
+}
+
+
+footer h1 {
+  font-size: 1.2em;
+}
+
+
+h1 {
+  font-size: 2em;
+}
+
+/*
+Observation and Explanation (Concise Version):
+Which rule takes precedence?
+The rule footer h1 takes precedence for the <h1> inside the footer.
+Why?
+Due to CSS Specificity - a weight system determining which styles apply when multiple rules target the same element.
+
+
+Specificity Calculation:
+
+footer h1 → Specificity: (0, 0, 0, 2) - 2 element selectors
+h1 → Specificity: (0, 0, 0, 1) - 1 element selector
+
+The more specific selector (footer h1) wins, so the footer's <h1> displays at 1.2em, not 2em.
+Key Principle:
+Specificity hierarchy: Inline styles > IDs > Classes > Elements. Higher specificity always wins, regardless of order in the CSS file.*/
